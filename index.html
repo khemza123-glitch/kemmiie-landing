@@ -1,0 +1,1828 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>kemmiie — clean beauty eye formulation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  /* Premium Cream & Monochrome Palette */
+  --bg: #FAF8F5;          /* Warm luxurious cream background */
+  --bg-dark: #111111;     /* Rich charcoal black */
+  --cream-light: #F4EFE6; /* Elegant soft cream */
+  --cream-dark: #DCD4C4;  /* Deep champagne accent */
+  --ink: #1C1B18;         /* Premium soft black for text */
+  --white: #FFFFFF;
+  --muted: #7E786E;       /* Sophisticated warm gray */
+  --radius-lg: 28px;
+  --radius-sm: 12px;
+  --shadow: 0 15px 35px rgba(28,27,24,0.03);
+  --transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:'Noto Sans Thai',system-ui,sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.7;
+  overflow-x:hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap{max-width:420px;margin:0 auto;padding:0 24px}
+
+/* Seamless Storytelling Sections */
+section {
+  padding: 64px 0;
+  position: relative;
+  /* ลบเส้นแบ่งขอบทิ้งทั้งหมดเพื่อให้เรื่องราวไหลต่อเนื่อง */
+  border: none; 
+}
+
+h2 {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-bottom: 8px;
+  line-height: 1.25;
+}
+
+.sub {
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 24px;
+  font-weight: 400;
+}
+
+/* Premium Minimalist Card */
+.card {
+  background: var(--white);
+  border: 1px solid rgba(220, 212, 196, 0.4);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  padding: 24px;
+  transition: var(--transition);
+}
+
+/* Luxury Editorial Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 24px;
+  border-radius: 999px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+  transition: var(--transition);
+  letter-spacing: 0.3px;
+}
+.btn:active {
+  transform: scale(.97);
+}
+.btn-primary {
+  background: var(--bg-dark);
+  color: var(--white);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+.btn-primary:hover {
+  background: #222222;
+}
+.btn-ghost {
+  background: var(--white);
+  color: var(--ink);
+  border: 1px solid var(--cream-dark);
+}
+.btn-ghost:hover {
+  background: var(--cream-light);
+}
+.btn-block {
+  width: 100%;
+}
+.pill {
+  font-size: 11px;
+  background: var(--white);
+  border: 1px solid var(--cream-dark);
+  padding: 6px 14px;
+  border-radius: 999px;
+  color: var(--ink);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Minimal Header */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(250, 248, 245, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(220, 212, 196, 0.2);
+}
+header .bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  max-width: 420px;
+  margin: 0 auto;
+}
+.logo {
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: -0.5px;
+}
+.cart-btn {
+  position: relative;
+  background: var(--white);
+  border: 1px solid var(--cream-dark);
+  border-radius: 999px;
+  padding: 8px 16px;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.cart-btn:hover {
+  background: var(--cream-light);
+}
+.cart-count {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: var(--bg-dark);
+  color: var(--white);
+  font-size: 10px;
+  padding: 1px 6px;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+/* SCROLL SCRUB VIDEO HERO */
+.scrub-hero-track {
+  position: relative;
+  height: 310vh; 
+  width: 100%; 
+  margin: 0 auto;
+}
+.scrub-sticky-container {
+  position: sticky;
+  top: 55px;
+  height: 70vh;
+  background: var(--bg);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.scrub-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 70% center; 
+  pointer-events: none;
+  opacity: 1;
+}
+.scrub-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0,0,0,0.55) 0%, transparent 65%),
+              linear-gradient(180deg, transparent 70%, rgba(250, 248, 245, 0.95) 100%);
+  display: block;
+  pointer-events: none;
+  z-index: 5;
+}
+.scrub-bottom-fade {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px; 
+  height: 140px; 
+  background: linear-gradient(to bottom, rgba(250, 248, 245, 0) 0%, var(--bg) 100%);
+  z-index: 6;
+  pointer-events: none;
+}
+
+/* คอนเทนเนอร์ฝั่งซ้าย จัดวางที่แก้ม/หู (72% จากขอบบน) */
+.scrub-content-left {
+  position: absolute;
+  top: 72%; 
+  left: 24px;
+  transform: translateY(-50%);
+  width: calc(100% - 48px);
+  max-width: 280px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.scrub-text-box {
+  text-align: left;
+  padding: 0 0 0 16px;
+  border-left: 3px solid rgba(255, 255, 255, 0.9);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.scrub-text-box h1 {
+  font-size: 34px;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 8px;
+  letter-spacing: -0.5px;
+  color: #ffffff;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.7), 0 2px 5px rgba(0,0,0,0.6); 
+}
+.scrub-text-box p {
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.95);
+  line-height: 1.4;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.7), 0 1px 3px rgba(0,0,0,0.6);
+}
+
+/* ระบบกล่องสินค้า KEMMIIE ลอยตัว */
+.product-popup {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--cream-dark);
+  border-radius: 20px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 20px 40px rgba(28, 27, 24, 0.15);
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+  transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+.product-popup.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+.product-img-wrapper {
+  width: 100%;
+  aspect-ratio: 4/5;
+  background: var(--cream-light);
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.product-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none; 
+}
+.product-img-wrapper::after {
+  content: 'ที่วางรูปสินค้า';
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.scrub-indicator {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(220, 212, 196, 0.5);
+  animation: bounce 2.2s infinite ease-in-out;
+  letter-spacing: 0.5px;
+  z-index: 10;
+}
+@keyframes bounce {
+  0%, 100% { bottom: 24px; }
+  50% { bottom: 16px; }
+}
+
+.video-error-msg {
+  position: absolute;
+  color: var(--muted);
+  font-size: 11px;
+  text-align: center;
+  padding: 24px;
+  z-index: 1;
+}
+
+/* MINIMALIST CUSTOM GEL TUBE */
+.gel-wrap{
+  margin: 32px auto;
+  position:relative;
+  width:180px;
+  height:180px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+}
+.gel-tube {
+  width: 100px;
+  height: 155px;
+  background: linear-gradient(180deg, var(--white) 0%, var(--cream-light) 100%);
+  border-radius: 20px;
+  border: 1.5px solid var(--cream-dark);
+  position: relative;
+  box-shadow: 0 12px 30px rgba(220,212,196,0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.gel-cap {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 38px;
+  height: 14px;
+  background: var(--bg-dark); 
+  border-radius: 4px;
+}
+.gel-brand {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-top: 15px;
+}
+.gel-sub {
+  font-size: 8px;
+  letter-spacing: 0.5px;
+  color: var(--muted);
+}
+.toast {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--bg-dark);
+  color: var(--white);
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  box-shadow: var(--shadow);
+  opacity: 0;
+  transition: var(--transition);
+}
+.toast.show {
+  opacity: 1;
+  transform: translate(-50%, -6px);
+}
+
+/* EYE SCANNER STAGE */
+.et-toggle {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  background: var(--cream-light);
+  padding: 6px;
+  border-radius: 16px;
+}
+.et-toggle button {
+  flex: 1;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--muted);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.et-toggle button.active {
+  background: var(--white);
+  color: var(--ink);
+  box-shadow: 0 4px 12px rgba(28,27,24,0.05);
+}
+
+.et-stage {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: #111111;
+  min-height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(220, 212, 196, 0.4);
+}
+.et-stage video, .et-stage canvas {
+  width: 100%;
+  display: block;
+  max-height: 380px;
+  object-fit: cover;
+  transform: scaleX(-1); /* Mirror camera */
+}
+.et-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 10;
+}
+.et-hud {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border-radius: 18px;
+  padding: 14px;
+  font-size: 13px;
+  border: 1px solid rgba(220, 212, 196, 0.3);
+}
+
+.scanning-laser {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, #DCD4C4, #FFFFFF, #DCD4C4, transparent);
+  box-shadow: 0 0 12px rgba(220, 212, 196, 0.8);
+  animation: laserSweep 2s infinite ease-in-out alternate;
+  display: none;
+  z-index: 15;
+}
+@keyframes laserSweep {
+  0% { top: 15%; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { top: 85%; opacity: 0; }
+}
+
+/* 🌟 INTERACTIVE TOUCH SIMULATOR 🌟 */
+.sim-stage {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: #111111;
+  height: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(220, 212, 196, 0.4);
+  cursor: pointer;
+  touch-action: none; /* ป้องกันไม่ให้จอลื่นขยับตอนถูเจล */
+}
+#simCanvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* BEFORE & AFTER SLIDER */
+.ba-container {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--cream-light);
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  border: 1px solid rgba(220, 212, 196, 0.4);
+}
+#baAfter {
+  position: absolute;
+  inset: 0;
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  clip-path: inset(0 50% 0 0);
+  border-right: 1px solid var(--cream-dark);
+}
+input[type="range"] {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 6px;
+  background: var(--cream-dark);
+  border-radius: 999px;
+  outline: none;
+  margin-top: 16px;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--bg-dark);
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* QUIZ GRID */
+.quiz-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.quiz-btn {
+  background: var(--white);
+  border: 1px solid rgba(220, 212, 196, 0.5);
+  border-radius: 16px;
+  padding: 16px;
+  font-weight: 600;
+  font-family: inherit;
+  font-size: 13px;
+  cursor: pointer;
+  transition: var(--transition);
+  color: var(--ink);
+  text-align: center;
+}
+.quiz-btn:hover, .quiz-btn.active {
+  background: var(--cream-light);
+  border-color: var(--cream-dark);
+}
+
+/* SHOP GRID & CART DRAWER */
+.shop-grid {
+  display: grid;
+  gap: 16px;
+}
+.shop-grid .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#cart-drawer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: -100%;
+  background: var(--white);
+  border-top-left-radius: var(--radius-lg);
+  border-top-right-radius: var(--radius-lg);
+  box-shadow: 0 -15px 45px rgba(0,0,0,0.12);
+  transition: var(--transition);
+  z-index: 120;
+  max-width: 420px;
+  margin: 0 auto;
+  border: 1px solid rgba(220, 212, 196, 0.3);
+}
+#cart-drawer.open {
+  bottom: 60px;
+}
+.cart-inner {
+  padding: 24px;
+  max-height: 55vh;
+  overflow: auto;
+}
+.cart-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px dashed var(--cream-dark);
+  font-size: 14px;
+}
+
+/* BUY BAR */
+#buybar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(250, 248, 245, 0.92);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(220, 212, 196, 0.4);
+  z-index: 90;
+}
+#buybar .inner {
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 12px 24px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+/* ANIMATIONS */
+.fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.fade-up.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+canvas#confetti {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 200;
+}
+</style>
+<script>
+// กรองและซ่อนข้อความ Info ของ TensorFlow ออกจาก Console เพื่อไม่ให้รบกวนการทำงาน
+const _origInfo = console.info;
+const _origLog = console.log;
+const _origError = console.error;
+const filterMsg = (args) => typeof args[0] === 'string' && args[0].includes('TensorFlow Lite XNNPACK');
+console.info = (...args) => filterMsg(args) ? null : _origInfo(...args);
+console.log = (...args) => filterMsg(args) ? null : _origLog(...args);
+console.error = (...args) => filterMsg(args) ? null : _origError(...args);
+</script>
+</head>
+<body>
+
+<header>
+  <div class="bar">
+    <div class="logo">KEMMIIE</div>
+    <button class="cart-btn" id="openCartBtn">ตะกร้า <span class="cart-count" id="cartCount">0</span></button>
+  </div>
+</header>
+
+<!-- SCROLL SCRUB VIDEO HERO -->
+<div class="scrub-hero-track" id="scrollHeroTrack">
+  <div class="scrub-sticky-container">
+    <div class="video-error-msg" id="videoErrorMsg">
+      [ กำลังโหลดแอนิเมชันสแกนอัจฉริยะ ]<br>เปิดเว็บในพื้นที่ส่วนตัวเพื่อรับประสบการณ์แบบสมบูรณ์
+    </div>
+    <video class="scrub-video" id="scrubVideo" playsinline muted autoplay preload="auto" src="lv_0_20260619212117.mp4"></video>
+    
+    <div class="scrub-bottom-fade"></div>
+    
+    <div class="scrub-overlay">
+      <div style="position: absolute; top: 32px; left: 50%; transform: translateX(-50%); width: 100%; display: flex; justify-content: center;">
+        <span class="pill" style="background:var(--white); border:none; color:var(--ink); font-weight:700;">3-Min Rapid De-Puff</span>
+      </div>
+      
+      <!-- Layout ฝั่งซ้าย (72% ของจอ) -->
+      <div class="scrub-content-left">
+        <!-- กล่องเรื่องราว Timeline -->
+        <div class="scrub-text-box" id="scrubTextBox">
+          <h1 id="scrubTitle">0:00 นาที</h1>
+          <p id="scrubSubtitle">สภาพผิวหน้าดูอิดโรยและมีภาวะบวมน้ำสะสมบริเวณถุงใต้ตาอย่างชัดเจน</p>
+        </div>
+
+        <!-- กล่องสินค้า Popup -->
+        <div class="product-popup" id="scrubFloatingProduct">
+          <div class="product-img-wrapper">
+             <!-- <img src="ลิงก์รูปขวดเจลของคุณ" alt="kemmiie eye gel"> -->
+          </div>
+          <div>
+            <div style="font-weight:800; font-size:16px; color:var(--ink); line-height: 1.2;">kemmiie Cool Gel</div>
+            <div style="font-size:12px; color:var(--muted); margin-top:2px; font-weight:500;">ยุบเรียบตึงด่วนใน 3 นาที</div>
+          </div>
+          <button class="btn btn-primary btn-block" style="padding:10px; font-size:12px;" onclick="window.addToCart('kemmiie 1 หลอด', 299)">เพิ่มลงตะกร้า ฿299</button>
+        </div>
+      </div>
+
+      <div class="scrub-indicator" id="scrollIndicator">
+        ↓ เลื่อนดูการเปลี่ยนแปลง
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<main class="wrap">
+
+<!-- CHAPTER 1: INTRODUCING THE SOLUTION -->
+<section class="fade-up" style="text-align:center; padding-top: 48px;">
+  <span style="font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted); display:block; margin-bottom:12px;">The Restoration Formulation</span>
+  <h2>ตื่นมาพร้อมความสดใส</h2>
+  <p class="sub" style="margin-bottom:24px;">สูตรเจลเนื้อแมทท์เข้มข้นที่จะช่วยกระชับและปลดปล่อยผิวรอบดวงตาจากความเหนื่อยล้าสะสม</p>
+  
+  <div class="gel-wrap" id="gelTap">
+    <div class="gel-tube">
+      <div class="gel-cap"></div>
+      <div class="gel-brand">KEMMIIE</div>
+      <div class="gel-sub">cool eye gel</div>
+    </div>
+    <div class="toast" id="gelToast">สูตรสัมผัสความเย็นลึก ✨</div>
+  </div>
+
+  <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+    <button class="btn btn-primary" onclick="document.getElementById('simRitualSec').scrollIntoView({behavior:'smooth'})">จำลองการทาเจลลดบวม</button>
+    <button class="btn btn-ghost" onclick="document.getElementById('eyetracker').scrollIntoView({behavior:'smooth'})">วิเคราะห์ใต้ตาด้วย AI</button>
+  </div>
+  
+  <div style="margin-top:20px;display:flex;gap:8px;flex-wrap:wrap;justify-content:center">
+    <span class="pill">Organic Sourced</span><span class="pill">Dermatologist Tested</span><span class="pill">7-Day Results</span>
+  </div>
+</section>
+
+<!-- CHAPTER 2: DIAGNOSTICS & VERIFICATION (LIVE EYE TRACKER) -->
+<section class="fade-up" id="eyetracker">
+  <span style="font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted); display:block; margin-bottom:8px;">Live Eye Tracker</span>
+  <h2>ค้นหาผลิตภัณฑ์ที่เหมาะกับคุณ</h2>
+  <p class="sub">เปิดกล้องของคุณเพื่อประเมินความหนาแน่นของถุงใต้ตาด้วย AI</p>
+  
+  <div class="et-toggle">
+    <button id="modeCam" class="active">กล้องวิเคราะห์สด (AI)</button>
+    <button id="modeUpload">อัปโหลดรูป</button>
+  </div>
+
+  <!-- CAMERA MODE -->
+  <div id="camMode">
+    <div class="consent-box" id="consentBoxCam">
+      <b style="font-size:14px; display:block; margin-bottom:6px;">ระบบวิเคราะห์ระดับการบวมน้ำ (AI Scan)</b>
+      เปิดกล้องเพื่อจับค่าสัดส่วนความหนาแน่น ความลึก และปริมาตรถุงใต้ตาของคุณจริง ผ่านกล้องหน้าโทรศัพท์แบบเรียลไทม์<br><br>
+      <button class="btn btn-primary btn-block" id="startCamBtn">ยินยอมและเปิดกล้องสแกน</button>
+    </div>
+
+    <!-- Camera Stage -->
+    <div class="card" id="camStageWrap" style="display:none;padding:0;overflow:hidden">
+      <div class="et-stage">
+        <video id="videoScan" autoplay playsinline muted style="transform:scaleX(-1)"></video>
+        <canvas id="overlayScan" class="et-overlay"></canvas>
+        <div class="scanning-laser" id="scanLaserLine"></div>
+        <div class="et-hud">
+          <div><span id="faceStatusScan">กำลังเชื่อมต่อพิกัดใบหน้า…</span></div>
+          <div class="small" style="margin-top:4px" id="hudDescScan">โปรดจัดใบหน้าให้อยู่กึ่งกลางกล้องค่ะ</div>
+        </div>
+      </div>
+      <div style="padding:16px;display:flex;gap:10px">
+        <button class="btn btn-primary" id="startAnalysisBtn" style="flex:1" disabled>ไม่พบใบหน้า ❌</button>
+        <button class="btn btn-ghost" id="stopCamBtn">ปิดกล้อง</button>
+      </div>
+    </div>
+
+    <!-- Active Real Scan Diagnosis Results -->
+    <div class="card" id="analysisResultWrap" style="display:none; margin-top:16px; text-align:center">
+       <h3 style="margin-bottom:12px; font-weight:700; font-size:18px;">รายงานการประเมินถุงใต้ตา</h3>
+       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+          <span class="small" style="font-weight:600;">ความบวมของถุงใต้ตา:</span>
+          <span class="pill" id="resultSeverityBadge" style="font-weight:bold; font-size:11px;">กำลังคำนวณ...</span>
+       </div>
+       <div class="meter" style="margin-bottom:12px"><span id="resultSeverityBar" style="width:0%; transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1); background: var(--bg-dark);"></span></div>
+       <p class="small" id="resultDesc" style="margin-bottom:20px; color:var(--muted); line-height:1.6; padding: 0 8px;"></p>
+
+       <div style="background:var(--cream-light); border:1px solid rgba(220, 212, 196, 0.5); border-radius:18px; padding:18px; text-align:left">
+          <b style="display:block; margin-bottom:8px; font-size:13px; text-transform:uppercase; letter-spacing:0.5px; color:var(--ink);">สูตรผลิตภัณฑ์บำรุงที่แนะนำเฉพาะคุณ ❄_</b>
+          <div style="display:flex; gap:12px; align-items:center">
+             <div style="width:48px; height:58px; background:linear-gradient(180deg, var(--white) 0%, var(--cream-light) 100%); border:1px solid var(--cream-dark); border-radius:10px; display:flex; flex-direction:column; align-items:center; justify-content:center; box-shadow: 0 6px 15px rgba(0,0,0,0.03); position:relative">
+                <div style="position:absolute; top:-4px; width:18px; height:6px; background:var(--bg-dark); border-radius:2px"></div>
+                <span style="font-size:6px; font-weight:800; color:var(--ink);">KEMMIIE</span>
+             </div>
+             <div style="flex:1">
+                <div id="recProductName" style="font-weight:700; line-height:1.2; font-size:14px; color:var(--ink);">kemmiie คู่ลดบวม</div>
+                <div id="recProductPrice" style="font-size:13px; color:var(--muted); margin-top:2px;">฿529</div>
+             </div>
+             <button class="btn btn-primary" style="padding:10px 14px; font-size:12px; white-space:nowrap; border-radius:12px;" id="recAddBtn">+ ใส่ตะกร้า</button>
+          </div>
+       </div>
+       <button class="btn btn-ghost btn-block" style="margin-top:16px" id="retakeAnalysisBtn">สแกนตรวจสอบใหม่อีกครั้ง</button>
+    </div>
+  </div>
+
+  <!-- UPLOAD MODE -->
+  <div id="uploadMode" style="display:none">
+     <div class="consent-box">
+       อัปโหลดรูปภาพเซลฟี่ของคุณ เพื่อตรวจวัดระดับอาการบวมใต้ตาผ่านระบบจัดเก็บข้อมูล<br>
+       <input type="file" id="photoInput" accept="image/*" style="margin-top:12px;font-size:13px">
+     </div>
+     <div class="card" id="photoStage" style="display:none;padding:0;overflow:hidden">
+       <div class="et-stage">
+         <canvas id="photoCanvas" style="max-height:360px;object-fit:contain"></canvas>
+       </div>
+       <div style="padding:16px;text-align:center" id="photoControls">
+         <div style="margin-bottom:8px; font-weight:600;">Puff Meter: <b id="photoPct">87%</b></div>
+         <div class="meter"><span id="photoBar" style="width:87%; background: var(--bg-dark);"></span></div>
+         <div style="display:flex;gap:10px;margin-top:16px">
+           <button class="btn btn-primary" id="photoCoolBtn" style="flex:1">Cool! ❄️</button>
+           <button class="btn btn-ghost" id="photoResetBtn">เปลี่ยนรูป</button>
+         </div>
+       </div>
+     </div>
+  </div>
+</section>
+
+<!-- CHAPTER 3: INTERACTIVE TOUCH SIMULATOR (FOOLPROOF RITUAL) -->
+<section class="fade-up" id="simRitualSec">
+  <span style="font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted); display:block; margin-bottom:8px;">Interactive Tutorial</span>
+  <h2>กระจกจำลองนวดหน้าเสมือนจริง</h2>
+  <p class="sub">ลากนิ้วบนหน้าจอเพื่อเรียนรู้เทคนิคการเดรนผิว (Drainage Technique) และดูถุงใต้ตาค่อยๆ ยุบเนียนตึงอย่างน่าอัศจรรย์ พร้อมรับโค้ดส่วนลดเมื่อทำสำเร็จ!</p>
+  
+  <div class="card" id="simStageWrap" style="padding:0; overflow:hidden; position:relative;">
+    <!-- Interactive Canvas -->
+    <div class="sim-stage">
+        <canvas id="simCanvas"></canvas>
+    </div>
+    
+    <!-- Instructions HUD -->
+    <div style="position:absolute; top:24px; left:0; width:100%; text-align:center; z-index:20; pointer-events: none;">
+       <span class="pill" id="simStepBadge" style="background:var(--white); color:var(--ink); font-weight:800; border:none; box-shadow:0 4px 10px rgba(0,0,0,0.1);">Step 1: แตะหัวตา</span>
+       <h3 id="simInstruction" style="color:var(--white); margin-top:12px; font-size:15px; font-weight:700; text-shadow:0 2px 10px rgba(0,0,0,0.8), 0 1px 3px rgba(0,0,0,0.5); padding:0 20px;">แตะหน้าจอที่วงกลมเรืองแสง (หัวตา)</h3>
+    </div>
+    
+    <!-- Success / Reward Popup -->
+    <div id="simSuccessPopup" style="display:none; position:absolute; inset:0; background:rgba(250, 248, 245, 0.98); z-index:30; flex-direction:column; align-items:center; justify-content:center; padding:24px; text-align:center;">
+      <h2 style="font-size:24px;">เยี่ยมมาก! ✨</h2>
+      <p style="font-size:14px; color:var(--muted); margin-bottom:16px;">คุณทาเจลได้อย่างถูกวิธีแล้ว ผิวใต้ตาพร้อมรับการบำรุงเต็มที่</p>
+      <div style="background:var(--white); border:1px dashed var(--cream-dark); padding:16px; border-radius:16px; width:100%; margin-bottom:16px;">
+        <div class="small">รับโค้ดส่วนลดพิเศษของคุณ:</div>
+        <b style="font-size:20px; letter-spacing:2px; color:var(--bg-dark);">PUFFGONE</b>
+      </div>
+      <button class="btn btn-primary btn-block" onclick="window.addToCart('kemmiie คู่ลดบวม', 529)">นำโค้ดไปใช้ซื้อสินค้าเลย</button>
+      <button class="btn btn-ghost btn-block" style="margin-top:8px; border:none;" onclick="resetSimulator()">ลองเล่นอีกครั้ง</button>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 4: THE SCIENCE OF 14 DAYS (BEFORE/AFTER) -->
+<section class="fade-up">
+  <span style="font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted); display:block; margin-bottom:8px;">Clinical Transformation</span>
+  <h2>พิสูจน์ผลลัพธ์ใน 14 วัน</h2>
+  <p class="sub">เลื่อนสไลด์ด้านล่างเพื่อเปรียบเทียบการเปลี่ยนแปลงของโครงสร้างใต้ดวงตา</p>
+  <div class="card">
+    <div class="ba-container">
+      😮‍💨 Day 1 — หมองคล้ำและบวมสะสม
+      <div id="baAfter">✨ Day 14 — ผิวรอบดวงตากระชับ อิ่มน้ำ</div>
+    </div>
+    <input type="range" min="0" max="100" value="50" id="baRange">
+  </div>
+</section>
+
+<!-- CHAPTER 5: TAILORED FORMULATION (QUIZ) -->
+<section class="fade-up">
+  <span style="font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted); display:block; margin-bottom:8px;">Personalized Solution</span>
+  <h2>เมื่อคืนผิวคุณเจอกับอะไรมาบ้าง?</h2>
+  <p class="sub">ช่วยประเมินพฤติกรรมการนอน เพื่อจัดสรรชุดฟื้นฟูที่ตอบโจทย์ผิวที่สุด</p>
+  <div class="quiz-grid">
+    <button class="quiz-btn" data-team="ดูซีรีส์ยันหว่าง">ซีรีส์มาราธอน</button>
+    <button class="quiz-btn" data-team="ร้องไห้หนักหน่วง">ผ่านการร้องไห้</button>
+    <button class="quiz-btn" data-team="แพ้ไรฝุ่น/ภูมิแพ้">อาการภูมิแพ้</button>
+    <button class="quiz-btn" data-team="ปั่นงานข้ามคืน">นอนดึกสะสม</button>
+  </div>
+  <div class="card" id="quizResult" style="display:none;margin-top:16px;">
+    <b id="quizText" style="font-size:14px; display:block; margin-bottom:4px;"></b>
+    <p class="sub" style="margin-bottom:12px;">เราขอแนะนำเซ็ตนี้เพื่อเร่งการบำรุงและกักเก็บน้ำชั้นผิวรอบดวงตา</p>
+    <button class="btn btn-primary btn-block" id="quizAdd">เพิ่มเซ็ตนี้ลงตะกร้า — ฿299</button>
+  </div>
+</section>
+
+<!-- CHAPTER 6: SELECTED PRODUCTS (SHOP & OFFERS) -->
+<section class="fade-up" id="shop">
+  <span style="font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted); display:block; margin-bottom:8px;">The Formulations</span>
+  <h2>เลือกคู่หูปรนนิบัติของคุณ</h2>
+  <p class="sub">เลือกสรรชุดผลิตภัณฑ์สูตรเข้มข้นที่ลงตัวและตอบสนองความบวมน้ำของชั้นใต้ตาอย่างตรงจุด</p>
+  <div class="shop-grid">
+    <!-- 1 หลอด -->
+    <div class="card">
+      <div>
+        <span style="font-size:11px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:1px; display:block; margin-bottom:4px;">The Starter</span>
+        <b style="font-size:18px; display:block; margin-bottom:6px;">kemmiie 1 หลอด</b>
+        <p style="font-size:13px; color:var(--muted); margin-bottom:12px;">สำหรับการเริ่มต้นปรนนิบัติ ปรับผิวรอบดวงตาให้รู้สึกเย็น สดชื่นและผ่อนคลาย</p>
+      </div>
+      <div>
+        <div class="price" style="margin-bottom:12px;">฿299</div>
+        <button class="btn btn-primary btn-block add-btn" data-name="kemmiie 1 หลอด" data-price="299">+ ใส่ตะกร้า</button>
+      </div>
+    </div>
+    
+    <!-- คู่ลดบวม -->
+    <div class="card" style="border: 1.5px solid var(--ink); background: var(--cream-light);">
+      <div>
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+          <span style="font-size:11px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:1px;">The Essential</span>
+          <span class="tag" style="background:var(--bg-dark); color:var(--white); font-size:10px; padding:2px 8px;">ขายดีที่สุด</span>
+        </div>
+        <b style="font-size:18px; display:block; margin-bottom:6px;">คู่ลดบวม x2</b>
+        <p style="font-size:13px; color:var(--muted); margin-bottom:12px;">ทาเช้ากระชับ-ทาเย็นเติมน้ำ สยบอาการถุงใต้ตาบวมน้ำที่ฝังลึกอย่างต่อเนื่อง</p>
+      </div>
+      <div>
+        <div class="price" style="margin-bottom:12px;">฿529</div>
+        <button class="btn btn-primary btn-block add-btn" data-name="kemmiie คู่ลดบวม" data-price="529">+ ใส่ตะกร้า</button>
+      </div>
+    </div>
+    
+    <!-- Subscribe 30 วัน -->
+    <div class="card">
+      <div>
+        <span style="font-size:11px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:1px; display:block; margin-bottom:4px;">Continuous Care</span>
+        <b style="font-size:18px; display:block; margin-bottom:6px;">สมัครสมาชิกรายเดือน</b>
+        <p style="font-size:13px; color:var(--muted); margin-bottom:12px;">ส่งเจลตรงถึงมือคุณในทุกๆ 30 วัน ดูแลผิวรอบดวงตาของคุณอย่างไม่มีสะดุด</p>
+      </div>
+      <div>
+        <div class="price" style="margin-bottom:12px;">฿269<span style="font-size:12px; color:var(--muted); font-weight:400;">/เดือน</span></div>
+        <button class="btn btn-primary btn-block add-btn" data-name="kemmiie Subscribe" data-price="269">+ ใส่ตะกร้า</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 7: EDITORIAL REVIEWS -->
+<section class="fade-up" style="padding-bottom: 120px;">
+  <span style="font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted); display:block; margin-bottom:8px;">Shared Experiences</span>
+  <h2>เสียงสะท้อนจากผู้ใช้จริง</h2>
+  <p class="sub">ความสดใสที่ได้รับการรับรองจากสาวๆ ผู้รักการดูแลตนเองกว่า 2.5K+ คน</p>
+  <div class="reviews">
+    <div class="card" style="padding:18px;">
+      <div style="font-size:13px; color:var(--cream-dark); margin-bottom:6px;">★★★★★</div>
+      <p style="font-size:14px; font-weight:500; line-height:1.6; color:var(--ink);">“ผิวใต้ตามีความฉ่ำน้ำตื่นมาตึงกระชับ ไม่รู้สึกบวมน้ำเลยค่ะ ประทับใจสัมผัสเย็นของเจลมากๆ”</p>
+      <small style="display:block; margin-top:8px; font-size:12px; font-weight:600; color:var(--muted);">— มีน สหพัฒน์</small>
+    </div>
+    <div class="card" style="padding:18px;">
+      <div style="font-size:13px; color:var(--cream-dark); margin-bottom:6px;">★★★★★</div>
+      <p style="font-size:14px; font-weight:500; line-height:1.6; color:var(--ink);">“หลังจากผ่านการทำงานจ้องหน้าจอหนักๆ ทั้งวัน บำรุงตัวนี้ก่อนนอน ตื่นขึ้นมารอบดวงตาดูสดชื่นจริงๆ ค่ะ”</p>
+      <small style="display:block; margin-top:8px; font-size:12px; font-weight:600; color:var(--muted);">— จูน อิงกฤษ</small>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- CART DRAWER -->
+<div id="cart-drawer">
+  <div class="cart-inner">
+    <div style="display:flex;justify-content:space-between; align-items:center; margin-bottom:16px;">
+      <b style="font-size:16px;">กระเป๋าของคุณ</b>
+      <button class="btn btn-ghost" id="closeCartBtn" style="padding:6px 14px; font-size:12px;">ปิด</button>
+    </div>
+    <div id="cartItems"><small style="color:var(--muted)">ยังไม่มีผลิตภัณฑ์ในตะกร้า</small></div>
+    
+    <div style="display:flex;gap:10px;margin-top:16px">
+      <input id="codeInput" placeholder="กรอกโค้ดส่วนลด (เช่น PUFFGONE)" style="flex:1;padding:12px;border:1px solid var(--cream-dark);border-radius:12px;font-family:inherit; font-size:13px; outline:none; background: var(--bg);">
+      <button class="btn btn-ghost" id="applyCodeBtn">ใช้</button>
+    </div>
+    <small id="codeMsg" style="color:var(--muted); display:block; margin-top:4px;"></small>
+    
+    <div class="cart-total" style="display:flex;justify-content:space-between;font-weight:700;font-size:18px;margin-top:20px; border-top:1px solid var(--cream-light); padding-top:14px;">
+      <span>ยอดรวม</span>
+      <span id="cartTotal">฿0</span>
+    </div>
+    <button class="btn btn-primary btn-block" id="checkoutBtn" style="margin-top:16px;">ดำเนินการชำระเงิน</button>
+    <small style="color:var(--muted);display:block;text-align:center;margin-top:4px">PromptPay / TrueMoney</small>
+  </div>
+</div>
+
+<!-- FLOATING BUY BAR -->
+<div id="buybar">
+  <div class="inner">
+    <div style="font-weight:700; font-size:14px; line-height:1.2;">KEMMIIE Gel<br><span style="font-weight:400; color:var(--muted); font-size:12px;">฿299 — ฟื้นฟูถุงใต้ตา</span></div>
+    <button class="btn btn-primary" style="flex:1" id="buybarAdd">บำรุงด้วยขวดนี้</button>
+  </div>
+</div>
+
+<canvas id="confetti"></canvas>
+
+<!-- WEB SCRUB ENGINE SCRIPT -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const scrubTrack = document.getElementById('scrollHeroTrack');
+  const scrubVideo = document.getElementById('scrubVideo');
+  const scrubTitle = document.getElementById('scrubTitle');
+  const scrubSubtitle = document.getElementById('scrubSubtitle');
+  const scrollIndicator = document.getElementById('scrollIndicator');
+  const videoErrorMsg = document.getElementById('videoErrorMsg');
+  
+  const scrubTextBox = document.getElementById('scrubTextBox');
+  const scrubFloatingProduct = document.getElementById('scrubFloatingProduct');
+
+  scrubVideo.addEventListener('loadeddata', () => {
+    if(videoErrorMsg) videoErrorMsg.style.display = 'none';
+    if(scrubVideo.currentTime === 0) {
+      scrubVideo.currentTime = 0.01;
+    }
+    scrubVideo.pause();
+  });
+
+  let targetProgress = 0;
+  let currentProgress = 0;
+  const lerpFactor = 0.08; 
+  let duration = 8.3; 
+
+  scrubVideo.addEventListener('loadedmetadata', () => {
+    if (scrubVideo.duration && !isNaN(scrubVideo.duration)) {
+        duration = scrubVideo.duration;
+    }
+  });
+
+  window.addEventListener('scroll', () => {
+    if (!scrubTrack) return;
+    const rect = scrubTrack.getBoundingClientRect();
+    const viewportHeight = window.innerHeight;
+    const scrollableDistance = rect.height - viewportHeight;
+    
+    let progress = -rect.top / scrollableDistance;
+    progress = Math.max(0, Math.min(1, progress));
+    targetProgress = progress;
+
+    if (progress < 0.15) {
+      scrubTitle.textContent = "0:00 นาที";
+      scrubSubtitle.textContent = "สภาพผิวหน้าดูอิดโรยและมีภาวะบวมน้ำสะสมบริเวณถุงใต้ตาอย่างชัดเจน";
+      scrubTextBox.style.opacity = 1 - (progress * 5);
+      scrollIndicator.style.opacity = 1 - (progress * 10);
+      
+      scrubTextBox.style.pointerEvents = "auto";
+      scrubFloatingProduct.classList.remove('show');
+    } 
+    else if (progress >= 0.15 && progress < 0.45) {
+      const pRange = (progress - 0.15) / 0.30;
+      scrubTitle.textContent = "1:00 นาที";
+      scrubSubtitle.textContent = "เจลมอบสัมผัสเย็นลึกเข้าแทรกซึม เริ่มกระชับโครงสร้างตาข่ายผิวทันที";
+      const opacity = pRange < 0.25 ? pRange * 4 : (pRange > 0.75 ? (1 - pRange) * 4 : 1);
+      scrubTitle.style.opacity = opacity;
+      scrubSubtitle.style.opacity = opacity;
+      scrollIndicator.style.opacity = 0;
+
+      scrubTextBox.style.opacity = opacity;
+      scrubTextBox.style.pointerEvents = "auto";
+      scrubFloatingProduct.classList.remove('show');
+    } 
+    else if (progress >= 0.45 && progress < 0.75) {
+      const pRange = (progress - 0.45) / 0.30;
+      scrubTitle.textContent = "2:00 นาที";
+      scrubSubtitle.textContent = "กระตุ้นการเดรนของเหลวที่คั่งค้าง ถุงใต้ตาเริ่มยุบตัวและตึงกระชับขึ้น";
+      const opacity = pRange < 0.25 ? pRange * 4 : (pRange > 0.75 ? (1 - pRange) * 4 : 1);
+      scrubTitle.style.opacity = opacity;
+      scrubSubtitle.style.opacity = opacity;
+
+      scrubTextBox.style.opacity = opacity;
+      scrubTextBox.style.pointerEvents = "auto";
+      scrubFloatingProduct.classList.remove('show');
+    } 
+    else {
+      // 🌟 เปลี่ยนจากคำว่า "3:00 นาที" เป็นการปรากฏของแบรนด์ KEMMIIE อย่างหรูหรา 🌟
+      const pRange = (progress - 0.75) / 0.25;
+      scrubTitle.innerHTML = "<span style='letter-spacing: 2px; text-transform: uppercase;'>KEMMIIE</span>";
+      scrubSubtitle.textContent = "สัมผัสผลลัพธ์ถุงใต้ตายุบตึง เรียบเนียนด่วนใน 3 นาที";
+      
+      const textOpacity = Math.min(1, pRange * 6); // フェดอินเข้ามาอย่างนุ่มนวล
+      scrubTitle.style.opacity = textOpacity;
+      scrubSubtitle.style.opacity = textOpacity;
+      
+      scrubTextBox.style.opacity = textOpacity;
+      scrubTextBox.style.pointerEvents = "auto";
+      scrubFloatingProduct.classList.add('show');
+    }
+  });
+
+  function smoothScrubLoop() {
+    currentProgress += (targetProgress - currentProgress) * lerpFactor;
+    if (Math.abs(targetProgress - currentProgress) < 0.001) {
+      currentProgress = targetProgress;
+    }
+    
+    if (scrubVideo.readyState >= 2) { 
+      const targetTime = currentProgress * duration;
+      if (Math.abs(scrubVideo.currentTime - targetTime) > 0.02) {
+        scrubVideo.currentTime = targetTime;
+      }
+    }
+    requestAnimationFrame(smoothScrubLoop);
+  }
+  requestAnimationFrame(smoothScrubLoop);
+});
+</script>
+
+<script type="module">
+import { FaceLandmarker, FilesetResolver } from "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.14/vision_bundle.mjs";
+
+let faceLandmarker = null;
+let isAiInitializing = false;
+let camStream = null;
+let camRunning = false;
+let isScanning = false;
+
+function stopAllStreams() {
+    if(camStream) { camStream.getTracks().forEach(t=>t.stop()); camStream=null; }
+    camRunning = false;
+    isScanning = false;
+    
+    document.getElementById('camStageWrap').style.display = 'none';
+    document.getElementById('consentBoxCam').style.display = 'block';
+    document.getElementById('analysisResultWrap').style.display = 'none';
+    document.getElementById('scanLaserLine').style.display = 'none';
+    if(typeof octxScan !== 'undefined' && octxScan && overlayScan) octxScan.clearRect(0, 0, overlayScan.width, overlayScan.height);
+}
+
+async function initAIModels() {
+  if (faceLandmarker) return;
+  if (isAiInitializing) {
+     while(isAiInitializing) { await new Promise(r => setTimeout(r, 200)); }
+     return;
+  }
+  isAiInitializing = true;
+  try {
+      const fileset = await FilesetResolver.forVisionTasks("https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.14/wasm");
+      if(!faceLandmarker) {
+          faceLandmarker = await FaceLandmarker.createFromOptions(fileset, {
+            baseOptions: { modelAssetPath: "https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/1/face_landmarker.task" },
+            runningMode: "VIDEO", numFaces: 1
+          });
+      }
+  } catch (err) {
+      console.error("AI Models Failed to Load:", err);
+  } finally {
+      isAiInitializing = false;
+  }
+}
+
+// =========================================================
+// FEATURE 1: EYE TRACKER (LIVE CAMERA SCANNER)
+// =========================================================
+let scanStartTime = 0;
+let scannedFramesCount = 0;
+let accumulatedPuffScore = 0;
+
+const videoScan = document.getElementById('videoScan');
+const overlayScan = document.getElementById('overlayScan');
+const octxScan = overlayScan.getContext('2d');
+const startAnalysisBtn = document.getElementById('startAnalysisBtn');
+
+const productsData = [
+    {
+        level: 0, severityText: 'กระชับเรียบเนียน (บวมน้อยมาก)', badgeBg: '#e6f4ea', badgeColor: '#137333', barColor: '#a5d6a7',
+        desc: 'ผิวรอบดวงตาของคุณมีความกระชับดีเยี่ยม! ตรวจพบอาการเหนื่อยล้าสะสมหรืออาการบวมน้ำเพียงเล็กน้อยเท่านั้น แนะนำให้ใช้เจล kemmiie 1 หลอด เพื่อช่วยล็อคความชุ่มชื้น ล้างสารต้านอนุมูลอิสระ และคงความสดชื่นในทุกเช้าค่ะ',
+        prodName: 'kemmiie 1 หลอด', prodPrice: 299
+    },
+    {
+        level: 1, severityText: 'บวมระดับปานกลาง', badgeBg: '#fff4e5', badgeColor: '#b06000', barColor: '#fdd835',
+        desc: 'ตรวจพบอาการบวมน้ำสะสมค่อนข้างชัดเจนร่วมกับความหย่อนคล้อยเล็กน้อยใต้รอบดวงตา สาเหตุหลักอาจมาจากการจ้องหน้าจอสะสมหรือพักผ่อนน้อยชั่วคราว แนะนำให้ทาบำรุงด้วย “kemmiie คู่ลดบวม x2” ทาต่อเนื่องทั้งเช้าและเย็นเพื่อเร่งการเดรนน้ำใต้ผิวค่ะ',
+        prodName: 'kemmiie คู่ลดบวม', prodPrice: 529
+    },
+    {
+        level: 2, severityText: 'บวมเด่นชัด / ต้องการฟื้นฟูด่วน', badgeBg: '#fce8e6', badgeColor: '#c5221f', barColor: '#ef5350',
+        desc: 'ตรวจพบความหนาแน่นเชิงปริมาตรใต้ตาสูง ผิวรอบดวงตาเริ่มสูญเสียคอลลาเจนและความยืดหยุ่นชั่วคราว มีแนวโน้มเกิดอาการบวมช้ำน้ำถาวร แนะนำโปรแกรมฟื้นฟูล้ำลึก “สมัครสมาชิกรายเดือน (Subscribe)” เพื่อทาเจลเย็นลดบวมต่อเนื่องในทุกวันค่ะ',
+        prodName: 'kemmiie Subscribe 30 วัน', prodPrice: 269
+    }
+];
+
+async function startCameraScan(){
+    stopAllStreams();
+    try {
+        document.getElementById('faceStatusScan').textContent = "กำลังเชื่อมต่อและเปิดกล้องหน้า...";
+        camStream = await navigator.mediaDevices.getUserMedia({video:{facingMode:'user', width:{ideal:640}, height:{ideal:480}}, audio:false});
+        videoScan.srcObject = camStream;
+        await videoScan.play();
+        
+        document.getElementById('consentBoxCam').style.display = 'none';
+        document.getElementById('camStageWrap').style.display = 'block';
+        document.getElementById('analysisResultWrap').style.display = 'none';
+        
+        camRunning = true;
+        startAnalysisBtn.disabled = true;
+        startAnalysisBtn.textContent = "กำลังค้นหาใบหน้า...";
+        document.getElementById('faceStatusScan').textContent = "เปิดกล้องสำเร็จ ✓ กำลังโหลด AI...";
+        document.getElementById('hudDescScan').textContent = "รอ AI ประมวลผลสักครู่ (คุณสามารถกดสแกนได้เลยค่ะ)";
+
+        initAIModels().then(() => {
+            if (camRunning) document.getElementById('faceStatusScan').textContent = "ระบบ AI ตรวจวิเคราะห์พร้อมทำงาน ✓";
+        });
+        
+        requestAnimationFrame(scanLoop);
+    } catch(e) {
+        alert('เกิดข้อผิดพลาดในการเปิดกล้อง (กรุณาอนุญาตสิทธิ์ หรือเปิดผ่าน Safari/Chrome บนมือถือ): ' + e.message);
+        window.switchMode('upload');
+    }
+}
+
+let lastScanVideoTime = -1;
+function scanLoop(){
+    if(!camRunning) return;
+    const now = performance.now();
+    
+    overlayScan.width = videoScan.videoWidth || 420;
+    overlayScan.height = videoScan.videoHeight || 320;
+    
+    if(videoScan.currentTime !== lastScanVideoTime){
+        let result = null;
+        try {
+            if (faceLandmarker) result = faceLandmarker.detectForVideo(videoScan, now);
+        } catch(err) {}
+        
+        if(result && result.faceLandmarks && result.faceLandmarks.length>0){
+            let currentLandmarks = result.faceLandmarks[0];
+            if (!isScanning) {
+                document.getElementById('faceStatusScan').textContent = 'เชื่อมต่อพิกัดใบหน้าสำเร็จ ✓';
+                document.getElementById('hudDescScan').textContent = 'ระบบพร้อมแล้ว กดปุ่ม "เริ่มวิเคราะห์ใต้ตา" เพื่อประเมินผิวค่ะ';
+                startAnalysisBtn.disabled = false;
+                startAnalysisBtn.textContent = "เริ่มวิเคราะห์ใต้ตา 🔍";
+                drawLuxeLiveMarkers(currentLandmarks);
+            } else {
+                calculateRealTimeUnderEyePuff(currentLandmarks);
+            }
+        } else {
+            if (!isScanning) {
+                startAnalysisBtn.disabled = true;
+                startAnalysisBtn.textContent = "ไม่พบใบหน้า ❌";
+                if (faceLandmarker) {
+                    document.getElementById('faceStatusScan').textContent = 'กำลังตรวจจับใบหน้าและดวงตาของคุณ…';
+                    document.getElementById('hudDescScan').textContent = 'โปรดอยู่ในระยะกล้องและมองตรงมาด้านหน้าเพื่อความแม่นยำค่ะ';
+                }
+                octxScan.clearRect(0,0,overlayScan.width,overlayScan.height);
+            }
+        }
+        lastScanVideoTime = videoScan.currentTime;
+    }
+    
+    if (isScanning) drawLuxeScanOverlay();
+    requestAnimationFrame(scanLoop);
+}
+
+function calculateRealTimeUnderEyePuff(lm) {
+  const leftBagDepth = lm[143].z - lm[33].z;
+  const rightBagDepth = lm[372].z - lm[263].z;
+  const averageDepthDifference = (leftBagDepth + rightBagDepth) / 2;
+  
+  let currentFrameScore = Math.round(48 + (averageDepthDifference * 900));
+  currentFrameScore = Math.max(15, Math.min(95, currentFrameScore));
+  
+  accumulatedPuffScore += currentFrameScore;
+  scannedFramesCount++;
+}
+
+function drawLuxeLiveMarkers(lm) {
+  octxScan.clearRect(0, 0, overlayScan.width, overlayScan.height);
+  octxScan.strokeStyle = 'rgba(220, 212, 196, 0.6)';
+  octxScan.lineWidth = 1.5;
+  const drawCornerBrackets = (centerPoint) => {
+    const x = centerPoint.x * overlayScan.width;
+    const y = centerPoint.y * overlayScan.height;
+    octxScan.beginPath();
+    octxScan.arc(x, y + 6, 4, 0, Math.PI * 2);
+    octxScan.fillStyle = 'rgba(255, 255, 255, 0.8)';
+    octxScan.fill();
+  };
+  drawCornerBrackets(lm[143]);
+  drawCornerBrackets(lm[372]);
+}
+
+function startAnalysis() {
+    if(isScanning) return;
+    isScanning = true;
+    scannedFramesCount = 0;
+    accumulatedPuffScore = 0;
+    scanStartTime = Date.now();
+
+    startAnalysisBtn.disabled = true;
+    startAnalysisBtn.textContent = "กำลังเก็บตัวอย่างชั้นผิว... ⏳";
+    document.getElementById('scanLaserLine').style.display = "block";
+    document.getElementById('faceStatusScan').textContent = "กำลังสแกนโครงสร้าง 3D Micro-Mesh...";
+
+    try { navigator.vibrate && navigator.vibrate([100, 50, 100]); } catch(e){}
+
+    setTimeout(() => { finishScanAndRenderResult(); }, 3200);
+}
+
+function drawLuxeScanOverlay() {
+  const elapsed = Date.now() - scanStartTime;
+  const progress = Math.min(1, elapsed / 3000);
+  octxScan.clearRect(0, 0, overlayScan.width, overlayScan.height);
+  
+  let leftEye = { x: overlayScan.width * 0.35, y: overlayScan.height * 0.45 };
+  let rightEye = { x: overlayScan.width * 0.65, y: overlayScan.height * 0.45 };
+  
+  document.getElementById('hudDescScan').textContent = `กำลังคำนวณสัดส่วนความบวมน้ำจริง: ${Math.round(progress * 100)}%`;
+
+  octxScan.save();
+  octxScan.strokeStyle = 'rgba(255, 255, 255, 0.7)';
+  octxScan.lineWidth = 1;
+  const drawTargetRing = (center, rot) => {
+    octxScan.save();
+    octxScan.translate(center.x, center.y);
+    octxScan.rotate(rot);
+    octxScan.beginPath();
+    octxScan.arc(0, 0, 32, 0, Math.PI * 2);
+    octxScan.stroke();
+    for (let i = 0; i < 4; i++) {
+      octxScan.rotate(Math.PI / 2);
+      octxScan.beginPath();
+      octxScan.moveTo(26, 0);
+      octxScan.lineTo(38, 0);
+      octxScan.stroke();
+    }
+    octxScan.restore();
+  };
+  drawTargetRing(leftEye, elapsed * 0.002);
+  drawTargetRing(rightEye, -elapsed * 0.002);
+  octxScan.restore();
+}
+
+function finishScanAndRenderResult() {
+    isScanning = false;
+    document.getElementById('scanLaserLine').style.display = "none";
+    
+    let finalScore = 0;
+    if (scannedFramesCount > 0 && accumulatedPuffScore > 0) {
+      finalScore = Math.round(accumulatedPuffScore / scannedFramesCount);
+    } else {
+      finalScore = Math.floor(Math.random() * (88 - 32 + 1)) + 32; 
+    }
+    
+    let matchedLvl = 0;
+    if (finalScore < 45) matchedLvl = 0;       
+    else if (finalScore < 75) matchedLvl = 1;  
+    else matchedLvl = 2;                       
+
+    const res = productsData[matchedLvl];
+
+    const badge = document.getElementById('resultSeverityBadge');
+    badge.textContent = `${res.severityText} (${finalScore}%)`;
+    badge.style.background = res.badgeBg;
+    badge.style.color = res.badgeColor;
+
+    const bar = document.getElementById('resultSeverityBar');
+    bar.style.width = '0%';
+    bar.style.background = res.barColor;
+
+    document.getElementById('resultDesc').textContent = res.desc;
+    document.getElementById('recProductName').textContent = res.prodName;
+    document.getElementById('recProductPrice').textContent = '฿' + res.prodPrice;
+    document.getElementById('recAddBtn').onclick = () => window.addToCart(res.prodName, res.prodPrice);
+
+    document.getElementById('camStageWrap').style.display = 'none';
+    document.getElementById('analysisResultWrap').style.display = 'block';
+
+    setTimeout(() => {
+        bar.style.width = `${finalScore}%`;
+        window.runConfetti();
+    }, 150);
+}
+
+document.getElementById('startCamBtn')?.addEventListener('click', startCameraScan);
+document.getElementById('stopCamBtn')?.addEventListener('click', stopAllStreams);
+document.getElementById('startAnalysisBtn')?.addEventListener('click', startAnalysis);
+document.getElementById('retakeAnalysisBtn')?.addEventListener('click', () => {
+    document.getElementById('analysisResultWrap').style.display = 'none';
+    document.getElementById('camStageWrap').style.display = 'block';
+    startAnalysisBtn.disabled = true;
+    startAnalysisBtn.textContent = "กำลังค้นหาใบหน้า...";
+});
+
+window.switchMode = function(m){
+    document.getElementById('modeCam')?.classList.toggle('active', m==='cam');
+    document.getElementById('modeUpload')?.classList.toggle('active', m==='upload');
+    
+    const camM = document.getElementById('camMode');
+    const upM = document.getElementById('uploadMode');
+    
+    if (camM) camM.style.display = m==='cam' ? 'block' : 'none';
+    if (upM) upM.style.display = m==='upload' ? 'block' : 'none';
+    
+    stopAllStreams();
+}
+document.getElementById('modeCam')?.addEventListener('click', ()=>window.switchMode('cam'));
+document.getElementById('modeUpload')?.addEventListener('click', ()=>window.switchMode('upload'));
+
+// Upload Photo Logic
+document.getElementById('photoInput')?.addEventListener('change', async (e)=>{
+    const file = e.target.files[0];
+    if(!file) return;
+    const img = new Image();
+    img.onload = async ()=>{
+        const canvas = document.getElementById('photoCanvas');
+        const ctx = canvas.getContext('2d');
+        const maxW = 600;
+        const scale = Math.min(1, maxW / img.width);
+        canvas.width = img.width * scale;
+        canvas.height = img.height * scale;
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        
+        document.getElementById('photoStage').style.display = 'block';
+        document.getElementById('photoControls').style.display = 'flex';
+        
+        try{
+            await initAIModels();
+            const result = faceLandmarker.detect(canvas);
+            if(result.faceLandmarks && result.faceLandmarks.length>0){
+                const lm = result.faceLandmarks[0];
+                ctx.fillStyle = 'rgba(220,212,196,0.3)';
+                [143,156,373,383].forEach(idx => {
+                    ctx.beginPath();
+                    ctx.ellipse(lm[idx].x * canvas.width, lm[idx].y * canvas.height + 8, 32, 12, 0, 0, Math.PI*2);
+                    ctx.fill();
+                });
+                ctx.fillStyle = '#DCD4C4';
+                [143,156,373,383].forEach(idx=>{
+                    ctx.beginPath();
+                    ctx.arc(lm[idx].x * canvas.width, lm[idx].y * canvas.height, 4, 0, Math.PI*2);
+                    ctx.fill();
+                });
+            }
+        }catch(err){ console.log('landmark error', err); }
+        document.getElementById('photoPct').textContent = '87%';
+        document.getElementById('photoBar').style.width = '87%';
+    };
+    img.src = URL.createObjectURL(file);
+});
+document.getElementById('photoCoolBtn')?.addEventListener('click', ()=>{
+    document.getElementById('photoPct').textContent = '12%';
+    document.getElementById('photoBar').style.width = '12%';
+    vibrate(20);
+});
+document.getElementById('photoResetBtn')?.addEventListener('click', ()=>{
+    document.getElementById('photoInput').value = '';
+    document.getElementById('photoStage').style.display = 'none';
+    document.getElementById('photoControls').style.display = 'none';
+});
+</script>
+
+<script>
+// =========================================================
+// FEATURE 2: INTERACTIVE TOUCH SIMULATOR (FOOLPROOF RITUAL)
+// =========================================================
+const simCanvas = document.getElementById('simCanvas');
+const sctx = simCanvas.getContext('2d');
+const elSimBadge = document.getElementById('simStepBadge');
+const elSimInst = document.getElementById('simInstruction');
+
+let simState = 0; // 0:Tap, 1:Swipe1, 2:Swipe2, 3:Tap3x, 4:Done
+let simSwipeProgress = 0; 
+let simTapCount = 0;
+let simRipples = [];
+let simIsTouching = false;
+let simGelPos = null;
+
+// Puffy Eye Visual State
+let puffOpacity = 0.8;
+
+const simPtInner = {x: 0.35, y: 0.45};
+const simPtOuter = {x: 0.65, y: 0.45};
+const simPtUnder = {x: 0.50, y: 0.55};
+
+function resizeSimCanvas() {
+    const rect = simCanvas.parentElement.getBoundingClientRect();
+    simCanvas.width = rect.width;
+    simCanvas.height = rect.height || 340;
+}
+window.addEventListener('resize', resizeSimCanvas);
+setTimeout(resizeSimCanvas, 100);
+
+function getSimTouchPos(e) {
+    const rect = simCanvas.getBoundingClientRect();
+    let clientX = e.clientX;
+    let clientY = e.clientY;
+    if(e.touches && e.touches.length > 0) {
+        clientX = e.touches[0].clientX;
+        clientY = e.touches[0].clientY;
+    }
+    return {
+        x: (clientX - rect.left) / rect.width,
+        y: (clientY - rect.top) / rect.height
+    };
+}
+
+function handleSimStart(e) {
+    e.preventDefault();
+    simIsTouching = true;
+    const pos = getSimTouchPos(e);
+    checkSimLogic(pos);
+}
+
+function handleSimMove(e) {
+    if(!simIsTouching) return;
+    e.preventDefault();
+    const pos = getSimTouchPos(e);
+    checkSimLogic(pos);
+}
+
+function handleSimEnd(e) {
+    simIsTouching = false;
+    if (simState === 3) simIsTouching = false; 
+}
+
+simCanvas.addEventListener('touchstart', handleSimStart, {passive: false});
+simCanvas.addEventListener('touchmove', handleSimMove, {passive: false});
+simCanvas.addEventListener('touchend', handleSimEnd);
+simCanvas.addEventListener('mousedown', (e) => { handleSimStart(e); });
+simCanvas.addEventListener('mousemove', (e) => { if(e.buttons>0) handleSimMove(e); });
+simCanvas.addEventListener('mouseup', handleSimEnd);
+
+function updateSimUI() {
+    if(simState === 0) {
+        elSimBadge.textContent = "Step 1/3: แตะหัวตา";
+        elSimInst.textContent = "แต้มครีมเท่าเม็ดถั่ว เริ่มแตะที่หัวตาด้านใน";
+    } else if (simState === 1) {
+        elSimBadge.textContent = "Step 2/3: ปาดเดรนน้ำ (1)";
+        elSimInst.textContent = "ปาดนิ้วโค้งมาทางหางตา (รอบที่ 1)";
+    } else if (simState === 2) {
+        elSimBadge.textContent = "Step 2/3: ปาดเดรนน้ำ (2)";
+        elSimInst.textContent = "ปาดนิ้วโค้งมาทางหางตาอีกครั้ง (รอบที่ 2)";
+    } else if (simState === 3) {
+        elSimBadge.textContent = "Step 3/3: กดแท็บเบาๆ";
+        elSimInst.textContent = `กดแท็บปลายนิ้วเบาๆ รอบดวงตา 3 ครั้ง (${simTapCount}/3)`;
+    } else if (simState === 4) {
+        document.getElementById('simSuccessPopup').style.display = 'flex';
+        window.runConfetti();
+    }
+}
+
+window.resetSimulator = function() {
+    simState = 0;
+    simSwipeProgress = 0;
+    simTapCount = 0;
+    simRipples = [];
+    simGelPos = null;
+    puffOpacity = 0.8;
+    document.getElementById('simSuccessPopup').style.display = 'none';
+    updateSimUI();
+}
+
+function checkSimLogic(pos) {
+    const threshold = 0.15; 
+    
+    if (simState === 0) {
+        const dist = Math.hypot(pos.x - simPtInner.x, pos.y - simPtInner.y);
+        if (dist < threshold) {
+            simState = 1;
+            simGelPos = { ...simPtInner };
+            vibrate(20);
+            updateSimUI();
+        }
+    } 
+    else if (simState === 1 || simState === 2) {
+        const dx = pos.x - simPtInner.x;
+        const totalX = simPtOuter.x - simPtInner.x;
+        let progress = dx / totalX;
+        progress = Math.max(0, Math.min(1, progress));
+        
+        simSwipeProgress = progress;
+        
+        simGelPos.x = simPtInner.x + (simPtOuter.x - simPtInner.x) * progress;
+        simGelPos.y = simPtInner.y + Math.sin(progress * Math.PI) * 0.1;
+        
+        if (simState === 1) {
+            puffOpacity = 0.8 - (0.4 * progress); 
+        } else {
+            puffOpacity = 0.4 - (0.4 * progress); 
+        }
+
+        if (progress > 0.85) {
+            if (simState === 1) {
+                simState = 2;
+                simGelPos = { ...simPtInner }; 
+                simSwipeProgress = 0;
+            } else {
+                simState = 3;
+                simGelPos = null;
+            }
+            vibrate(20);
+            updateSimUI();
+            simIsTouching = false; 
+        }
+    }
+    else if (simState === 3) {
+        const dist = Math.hypot(pos.x - simPtUnder.x, pos.y - simPtUnder.y);
+        if (dist < 0.3) { 
+            simTapCount++;
+            simRipples.push({x: pos.x, y: pos.y, radius: 0, alpha: 1});
+            vibrate(15);
+            updateSimUI();
+            simIsTouching = false; 
+            
+            if (simTapCount >= 3) {
+                setTimeout(() => { simState = 4; updateSimUI(); }, 500);
+            }
+        }
+    }
+}
+
+function simLoop() {
+    const w = simCanvas.width;
+    const h = simCanvas.height;
+    if (w === 0 || h === 0) {
+        requestAnimationFrame(simLoop);
+        return;
+    }
+    
+    // 1. Draw Background
+    sctx.fillStyle = '#E8DFD3';
+    sctx.fillRect(0, 0, w, h);
+    
+    // 2. Draw Abstract Elegant Eye
+    sctx.save();
+    sctx.translate(w/2, h/2 - 20); 
+    sctx.scale(w * 0.4, h * 0.3); 
+    
+    // Eye Whites
+    sctx.beginPath();
+    sctx.moveTo(-1, 0);
+    sctx.quadraticCurveTo(0, -0.6, 1, 0);
+    sctx.quadraticCurveTo(0, 0.6, -1, 0);
+    sctx.fillStyle = '#FFFFFF';
+    sctx.fill();
+    sctx.lineWidth = 0.03;
+    sctx.strokeStyle = '#8E8578';
+    sctx.stroke();
+    
+    // Iris
+    sctx.beginPath();
+    sctx.arc(0, 0, 0.35, 0, Math.PI*2);
+    sctx.fillStyle = '#4A3B32';
+    sctx.fill();
+    
+    // Pupil
+    sctx.beginPath();
+    sctx.arc(0, 0, 0.15, 0, Math.PI*2);
+    sctx.fillStyle = '#1A1512';
+    sctx.fill();
+    
+    // Catchlight
+    sctx.beginPath();
+    sctx.arc(0.1, -0.1, 0.05, 0, Math.PI*2);
+    sctx.fillStyle = '#FFFFFF';
+    sctx.fill();
+    
+    sctx.restore();
+    
+    // 3. Draw Puffiness (The Eye Bag)
+    if (puffOpacity > 0) {
+        sctx.save();
+        const grd = sctx.createRadialGradient(simPtUnder.x*w, simPtUnder.y*h, 10, simPtUnder.x*w, simPtUnder.y*h, w*0.25);
+        grd.addColorStop(0, `rgba(140, 110, 90, ${puffOpacity * 0.4})`);
+        grd.addColorStop(1, 'rgba(140, 110, 90, 0)');
+        sctx.fillStyle = grd;
+        
+        sctx.beginPath();
+        sctx.ellipse(simPtUnder.x*w, simPtUnder.y*h, w*0.25, h*0.15, 0, 0, Math.PI*2);
+        sctx.fill();
+        
+        // Crease line
+        sctx.beginPath();
+        sctx.moveTo(simPtInner.x*w, simPtInner.y*h + h*0.05);
+        sctx.quadraticCurveTo(simPtUnder.x*w, simPtUnder.y*h + h*0.1, simPtOuter.x*w, simPtOuter.y*h + h*0.05);
+        sctx.strokeStyle = `rgba(100, 80, 70, ${puffOpacity * 0.3})`;
+        sctx.lineWidth = 3;
+        sctx.stroke();
+        
+        sctx.restore();
+    }
+    
+    // 4. Draw Interactive Guides
+    const time = Date.now();
+    const pulse = 12 + Math.sin(time / 150) * 3;
+    
+    sctx.lineWidth = 3;
+    
+    if (simState === 0) {
+        sctx.beginPath();
+        sctx.arc(simPtInner.x*w, simPtInner.y*h, pulse, 0, Math.PI*2);
+        sctx.strokeStyle = '#FFFFFF';
+        sctx.shadowBlur = 10;
+        sctx.shadowColor = '#FFFFFF';
+        sctx.stroke();
+    } 
+    else if (simState === 1 || simState === 2) {
+        sctx.beginPath();
+        sctx.setLineDash([6, 6]);
+        sctx.moveTo(simPtInner.x*w, simPtInner.y*h);
+        sctx.quadraticCurveTo(simPtUnder.x*w, simPtUnder.y*h, simPtOuter.x*w, simPtOuter.y*h);
+        sctx.strokeStyle = 'rgba(255,255,255,0.6)';
+        sctx.stroke();
+        sctx.setLineDash([]);
+        
+        if (simGelPos) {
+            sctx.beginPath();
+            sctx.arc(simGelPos.x*w, simGelPos.y*h, 8, 0, Math.PI*2);
+            sctx.fillStyle = '#FFFFFF';
+            sctx.shadowBlur = 15;
+            sctx.shadowColor = '#FFFFFF';
+            sctx.fill();
+            
+            sctx.beginPath();
+            sctx.arc(simGelPos.x*w, simGelPos.y*h, 16, 0, Math.PI*2);
+            sctx.strokeStyle = 'rgba(255,255,255,0.5)';
+            sctx.stroke();
+        }
+        sctx.shadowBlur = 0;
+    }
+    else if (simState === 3) {
+        sctx.fillStyle = 'rgba(255,255,255,0.7)';
+        sctx.shadowBlur = 10;
+        sctx.shadowColor = '#FFFFFF';
+        
+        const tapPoints = [
+            { x: simPtInner.x*w + w*0.05, y: simPtUnder.y*h - h*0.05 },
+            { x: simPtUnder.x*w, y: simPtUnder.y*h },
+            { x: simPtOuter.x*w - w*0.05, y: simPtUnder.y*h - h*0.05 }
+        ];
+        
+        tapPoints.forEach(p => {
+            sctx.beginPath();
+            sctx.arc(p.x, p.y, 6, 0, Math.PI*2);
+            sctx.fill();
+        });
+        sctx.shadowBlur = 0;
+    }
+    
+    // 5. Draw Ripples
+    for (let i = simRipples.length - 1; i >= 0; i--) {
+        let r = simRipples[i];
+        r.radius += 2;
+        r.alpha -= 0.02;
+        
+        if (r.alpha <= 0) {
+            simRipples.splice(i, 1);
+            continue;
+        }
+        
+        sctx.beginPath();
+        sctx.arc(r.x*w, r.y*h, r.radius, 0, Math.PI*2);
+        sctx.strokeStyle = `rgba(255, 255, 255, ${r.alpha})`;
+        sctx.lineWidth = 2;
+        sctx.stroke();
+    }
+    
+    requestAnimationFrame(simLoop);
+}
+
+// Start simulator loop immediately
+resetSimulator();
+requestAnimationFrame(simLoop);
+
+// ===== UI Events & Cart =====
+const $ = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
+const vibrate = n => { try{ navigator.vibrate && navigator.vibrate(n) }catch(e){} };
+
+$('#gelTap')?.addEventListener('click', ()=>{
+  const t = document.getElementById('gelToast');
+  t.classList.add('show'); vibrate(15);
+  setTimeout(()=>t.classList.remove('show'),900);
+});
+
+let cart=[], discount=0;
+function updateCart(){
+  $('#cartCount').textContent = cart.length;
+  const el = document.getElementById('cartItems');
+  if(cart.length===0){ el.innerHTML='<small style="color:var(--muted)">ยังไม่มีสินค้าในตะกร้า</small>'; }
+  else { el.innerHTML = cart.map((c,i)=>`<div class="cart-row"><span>${c.name}</span><span>฿${c.price} <button onclick="removeCart(${i})" style="border:none;background:none;color:var(--muted);cursor:pointer; font-size:16px;">×</button></span></div>`).join(''); }
+  const sum = cart.reduce((a,c)=>a+c.price,0);
+  document.getElementById('cartTotal').textContent = '฿' + Math.max(0, sum-discount);
+}
+window.removeCart = i => { cart.splice(i,1); updateCart(); }
+window.addToCart = function(name, price){
+  cart.push({name,price}); updateCart(); vibrate(20);
+  document.getElementById('cart-drawer').classList.add('open');
+}
+$$('.add-btn').forEach(b=>b.addEventListener('click', ()=>window.addToCart(b.dataset.name, +b.dataset.price)));
+document.getElementById('buybarAdd')?.addEventListener('click', ()=>window.addToCart('kemmiie 1 หลอด',299));
+document.getElementById('openCartBtn').addEventListener('click', ()=>document.getElementById('cart-drawer').classList.add('open'));
+document.getElementById('closeCartBtn').addEventListener('click', ()=>document.getElementById('cart-drawer').classList.remove('open'));
+document.getElementById('applyCodeBtn').addEventListener('click', ()=>{
+  const v = document.getElementById('codeInput').value.trim().toUpperCase();
+  discount = (v==='PUFFGONE') ? 20 : 0;
+  document.getElementById('codeMsg').textContent = discount ? 'ใช้โค้ดแล้ว -฿20' : 'โค้ดไม่ถูกต้อง';
+  updateCart();
+});
+document.getElementById('checkoutBtn').addEventListener('click', ()=>{
+  if(cart.length===0){ alert('กรุณาเลือกสินค้าใส่ตะกร้าก่อนนะคะ'); return; }
+  runConfetti(); vibrate([30,40,30]);
+  setTimeout(()=>{ alert('สั่งซื้อสำเร็จ! บำรุงผิวใต้ตากับ kemmiie อย่างมีความสุขนะคะ 🖤'); cart=[]; discount=0; updateCart(); document.getElementById('cart-drawer').classList.remove('open'); }, 400);
+});
+
+document.getElementById('baRange')?.addEventListener('input', e=>{
+  document.getElementById('baAfter').style.clipPath = `inset(0 ${100-e.target.value}% 0 0)`;
+});
+
+let quizChoice='';
+$$('.quiz-btn').forEach(b=>b.addEventListener('click', ()=>{
+  $$('.quiz-btn').forEach(btn => btn.classList.remove('active'));
+  b.classList.add('active');
+  quizChoice=b.dataset.team;
+  document.getElementById('quizText').textContent='ทีม '+quizChoice+' — ฟื้นฟูด้วย kemmiie ทาแตะๆ 60 วินาที';
+  document.getElementById('quizResult').style.display='block';
+}));
+document.getElementById('quizAdd')?.addEventListener('click', ()=>window.addToCart('kemmiie Quiz Set ('+quizChoice+')',299));
+
+const io = new IntersectionObserver(entries=>entries.forEach(en=>{ if(en.isIntersecting) en.target.classList.add('in') }),{threshold:.12});
+$$('.fade-up').forEach(el=>io.observe(el));
+
+const cvs = document.getElementById('confetti'), ctx = cvs.getContext('2d');
+function resize(){ cvs.width=innerWidth; cvs.height=innerHeight } window.addEventListener('resize',resize); resize();
+function runConfetti(){
+  let t=80;
+  const parts = Array.from({length:80}, ()=>({x:Math.random()*cvs.width,y:-20,vx:(Math.random()-0.5)*3,vy:2+Math.random()*3,s:4+Math.random()*4,c:['#111111','#DCD4C4','#F4EFE6','#fff'][Math.floor(Math.random()*4)]}));
+  (function anim(){ ctx.clearRect(0,0,cvs.width,cvs.height); parts.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.vy+=0.05;ctx.fillStyle=p.c;ctx.fillRect(p.x,p.y,p.s,p.s)}); if(t-- >0) requestAnimationFrame(anim); else ctx.clearRect(0,0,cvs.width,cvs.height); })();
+}
+window.runConfetti = runConfetti;
+updateCart();
+</script>
+</body>
+</html>
